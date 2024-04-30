@@ -61,6 +61,6 @@ export class CloudinaryService {
         const media = await this.mediasModel.findById(id)
 
         await cloudinary.uploader.destroy(media.key)
-        // return await this.mediasModel.findByIdAndRemove(id)
+        return await this.mediasModel.findByIdAndDelete(id)
     }
 }

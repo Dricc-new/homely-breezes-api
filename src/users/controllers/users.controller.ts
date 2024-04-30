@@ -5,7 +5,7 @@ import { JwtAuthGuard } from 'src/auth/guards/jwt.auth.guard';
 import { RolesGuard } from 'src/auth/guards/roles.guard';
 import { QueryDTO } from 'src/utils/query.dto';
 
-@UseGuards(JwtAuthGuard, RolesGuard)
+// @UseGuards(JwtAuthGuard, RolesGuard)
 @Controller('users')
 export class UsersController {
     constructor(private readonly usersService: UsersService) { }

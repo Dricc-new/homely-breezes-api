@@ -4,6 +4,7 @@ import { AuthModule } from './auth/auth.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { MediaStorageSystemModule } from './media-storage-system/media-storage-system.module';
+import { SinglePageModule } from './single-page/single-pages.module';
 
 @Module({
   imports: [ConfigModule.forRoot({
@@ -15,6 +16,6 @@ import { MediaStorageSystemModule } from './media-storage-system/media-storage-s
     inject: [ConfigService],
     useFactory: async (conf: ConfigService) => ({ uri: conf.get('MONGODB_URI')}) 
   })
-  , UsersModule, AuthModule, MediaStorageSystemModule],
+  , UsersModule, AuthModule, MediaStorageSystemModule, SinglePageModule],
 })
 export class AppModule { }
